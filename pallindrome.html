@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num=+prompt('enter the number');
+        var rem;
+        var sum=0;
+        var temp=num;
+           while(num){
+            rem=num%10;
+            sum=sum*10+rem;
+            num=parseInt(num/10);
+                               
+           }
+          
+          if(temp==sum){
+            console.log('given number is pallindrome')
+          }
+           else{
+            console.log('given number is not pallindrome')
+          }
+    </script>
+</body>
+</html>
