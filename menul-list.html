@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="items.js"></script>
+</head>
+<body>
+    <div class="d-flex ">
+        <div class="w-75 border border-warning m-2">
+            <h1>Items List</h1>
+            <ul id="item"></ul>
+        </div>
+        <div class="w-25 border border-success m-2">
+            <h1>Selected Items</h1>
+            <ul id="selected items">
+
+            </ul>
+            <h3 id="tt"> Total amount=<span>0</span></h3>
+        </div>
+    </div> 
+
+    <script>
+        
+        for( let k in items){
+            var mli=document.createElement("li")
+            mli.innerHTML=k
+           var nol=document.createElement("ol")
+            items[k].forEach(function(obj,i){
+                
+                var nli=document.createElement("li")
+                nli.innerHTML=obj.itemname
+                var nch=document.createElement("input")
+                nch.type="checkbox"
+                nch.onchange=function(e){
+                    items[k][i].selected=e.target.checked
+                    gencard()
+                    console.log(items)
+                    
+                }
+                nli.appendChild(nch) 
+                nol.appendChild(nli)        
+                
+            })
+            mli.appendChild(nol)
+           document.getElementById("item").appendChild(mli)
+           
+           
+        }
+        
+        function gencard(){
+               var totalamount=[]
+               totalamount.push(0)
+            document.getElementById("selected items").innerHTML=""
+            for( let k in items){
+           var mli=document.createElement("li")
+           mli.innerHTML=k
+           var nol=document.createElement("ol")
+           var x=0
+            items[k].forEach(function(obj){
+               if(obj.selected){
+                var nli=document.createElement("li")
+                nli.innerHTML=obj.itemname
+                nol.appendChild(nli)
+                  
+
+                var nh=document.createElement("h6")
+                nli.appendChild(nh)
+                var btn1=document.createElement("button")
+                btn1.innerHTML="+"
+                btn1.style.marginRight="30px"
+                nh.innerHTML=obj.quantity+"*"+obj.itemprice+"="+obj.quantity*obj.itemprice
+                totalamount.push(obj.itemprice)
+    
+                    var ar=[]
+                btn1.onclick=function(){
+                        obj.quantity=obj.quantity+1
+                        nh.innerHTML= obj.quantity +"*"+obj.itemprice+"="+obj.quantity*obj.itemprice
+                       totalamount.push(obj.itemprice)
+                       gettotal(totalamount)
+                       
+                     
+            
+            
+                }
+                nli.appendChild(btn1)
+
+                var btn2=document.createElement("button")
+                 btn2.innerHTML="-"
+                 btn2.onclick=function(){
+                    obj.quantity=obj.quantity-1
+                    nh.innerHTML=obj.quantity +"*"+obj.itemprice+"="+obj.quantity*obj.itemprice
+                    
+                      totalamount.splice(totalamount.indexOf(obj.itemprice),1)
+                      gettotal(totalamount)
+                   
+                
+                 }
+        
+                 
+                
+                 nli.appendChild(btn2)
+                
+                 
+
+               }
+            
+            
+            })
+            mli.appendChild(nol)
+           document.getElementById("selected items").appendChild(mli)
+
+        
+        }
+         
+           }
+           function gettotal(totalamount){
+            console.log(totalamount)
+           document.querySelector("#tt span").innerHTML= totalamount.reduce(function(a,b){
+            return a+b
+           })
+        }
+
+        
+
+    
+    </script>
+</body>
+</html>

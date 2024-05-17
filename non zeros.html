@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var arr=[2,3,4,5,0,0,0,6,7,0,8,0,9]
+     var nonZeroes=[]
+     var  zeroes=[]
+        arr.map(num=>{
+            if(num>0){
+                nonZeroes.push(num)
+            }
+            else{
+                zeroes.push(num)
+            }
+        })
+        
+        arr=[...nonZeroes,...zeroes]
+        console.log(arr)
+    </script>
+</body>
+</html>
