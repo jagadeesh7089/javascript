@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      class  Pets{
+        name;
+        pet;
+        age;
+        constructor(x,y,z){
+            this.name=x
+            this.pet=y
+            this.age=z
+           
+        }
+        details(){
+            return `My ${this.pet} name is ${this.name} and he is ${this.age}years old`
+         
+        }
+      }
+
+         var op1=new Pets("Julliy","Dog",6);
+         console.log(op1.details())
+    </script>
+</body>
+</html>

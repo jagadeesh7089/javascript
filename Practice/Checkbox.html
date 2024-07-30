@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" value="html" onchange="abc(event)"> Html
+    <input type="checkbox" value="css" onchange="abc(event)"> css
+    <input type="checkbox" value="angular" onchange="abc(event)">angular
+    <input type="checkbox" value="react" onchange="abc(event)">react
+    <input type="checkbox" value="javascript" onchange="abc(event)">javascript
+    <input type="checkbox" value="bootstrap" onchange="abc(event)">bootstrap
+
+    <h2 id="root"></h2>
+
+    <script>
+        var ar=[]
+           function abc(e){
+            if( e.target.checked ){
+            ar.push(e.target.value) 
+          }
+           function genui(){
+             document.getElementById("root").innerHTML=""
+             ar.forEach((a)=>{
+                var nl=document.createElement("li") 
+                nl.innerHTML=a
+                document.getElementById("root").appendChild(nl)
+            })
+           
+           } 
+        //    genui()
+          if(!e.target.checked){
+             ar.map((a,i)=>{
+                if(a===e.target.value){
+                   return  ar.splice(i,1)
+                }
+             })
+             
+          }
+          genui()
+          console.dir(e.target)
+           }
+    </script>
+</body>
+</html>

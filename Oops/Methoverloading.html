@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+        class Parent{
+            name;
+            constructor(){
+                console.log("this is Parent constructor")
+            }
+            speak(){
+                console.log("this is Pareant class or base class")
+            }
+            main(){
+                console.log("this is parent main method")
+            }
+            main(){
+                console.log("This is parent parameters method ")
+            }
+
+            
+        }
+
+        class Child extends Parent{
+            name;
+            //  constructor(){
+            //  console.log("This is Child constructor")
+            // }
+           
+            speak (){
+                console.log("This is Child class or dervied class")
+                // super.main()
+            }
+            speak(a,b){
+                console.log(`we can pass the parameters ${a} and ${b}`)
+            }
+        }
+
+       var oc=new Child()
+       oc.speak(23,54)
+       oc.main()
+
+   </script> 
+</body>
+</html>

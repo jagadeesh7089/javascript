@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let mypromises=new Promise(function (resolve,reject){
+            setTimeout(function(){
+                resolve("HELLO EDUPOLY")
+            },[3000])
+        })
+        mypromises.then(value=>console.log(value))
+
+        let mypromises2=new Promise((resolve,reject)=>{
+            setInterval(()=>{
+            resolve(" I LOVE YOU")
+        },[1000])
+        })
+        mypromises2.then(value=>console.log(value))
+    </script>
+</body>
+</html>

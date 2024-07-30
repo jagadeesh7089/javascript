@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         class car{
+            constructor(Brand){
+                this._carname=Brand
+            }
+
+            get carname(){
+                return this._carname
+            }
+
+            set carname(x){
+                this._carname=x
+            }
+
+
+         }
+
+         const mycar=new car("Mahindra Thar")
+         console.log(mycar.carname)
+         mycar.carname="Tata Punch_ev"
+         console.log(mycar.carname)
+    </script>
+</body>
+</html>

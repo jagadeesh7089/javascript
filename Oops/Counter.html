@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function counter(){
+            let count=0
+
+            return {
+                increment:function(){
+                    count++;
+                },
+
+                getcount:()=>{
+                    return count
+                }
+            }
+        }
+
+        var result=counter()
+        result.increment() 
+        result.increment()
+        result.increment()
+        result.increment()
+        result.increment()
+        result.increment()
+        result.increment()
+        result.increment()
+        result.increment()
+        result.increment()
+        console.log(result.getcount())
+
+           
+    </script>
+</body>
+</html>
