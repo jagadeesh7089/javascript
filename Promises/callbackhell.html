@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Nested async functions (a.k.a. Callback Hell)
+function asyncFunction1(callback) {
+    setTimeout(() => {
+        console.log("Async Function 1 Done");
+        callback();
+    }, 1000);
+}
+
+function asyncFunction2(callback) {
+    setTimeout(() => {
+        console.log("Async Function 2 Done");
+        callback();
+    }, 1000);
+}
+
+function asyncFunction3(callback) {
+    setTimeout(() => {
+        console.log("Async Function 3 Done");
+        callback();
+    }, 1000);
+}
+
+// The dreaded callback pyramid
+asyncFunction1(() => {
+    asyncFunction2(() => {
+        asyncFunction3(() => {
+            console.log("I'm lost in Callback Hell!");
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

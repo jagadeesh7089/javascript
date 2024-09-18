@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function one(){
+            this.firstname="jagadeesh"
+        }
+        // one.prototype.firstname="jagadeesh"
+         function two(){
+            this.lastname="kumar"
+            one.call(this)
+         }
+         two.prototype=Object.create(one.prototype)
+        //   this.lastname="kumar"
+          var ob1=new two()
+          console.log(ob1.firstname)
+          console.log(ob1.lastname)
+      
+    </script>
+</body>
+</html>

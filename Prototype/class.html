@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mobile{
+            mobilebrand
+            mobileram
+            mobileprice
+            mobileprocessor
+            mobilediscount
+            constructor(a,b,c,d,e){
+                this.mobilebrand=a
+                this.mobileram=b
+                this.mobileprice=c
+                this.mobileprocessor=d
+                this.mobilediscount=e
+
+            }
+            gettotalprice(){
+                return this.mobileprice-(this.mobilediscount/100)*this.mobileprice
+            }  
+
+        }
+        Mobile.prototype.getmobileprocessor=function(){
+            return this.mobileprocessor
+        }
+
+        // class abc{
+        //     firstname
+        //     age
+        //     gender
+        //     constructor(x,y,z){
+        //         this.firstname=x
+        //         this.age=y
+        //         this.gender=z
+
+        //     }
+        // }
+
+        // var oc=new abc("jagadeesh",23,"Male")
+        // console.dir(oc)
+        
+        // var obj3=new Mobile()
+
+        var obj=new Mobile("redmi","8gb",20000,"snapdragon",10)
+        console.log(obj.gettotalprice())
+        var obj2=new Mobile("Realmi","12gb",30000,"Dimensity",20)
+        console.log(obj2)
+         
+        var obj3=new Mobile("samsung","16gb",40000,"Android",10)
+        console.dir(obj3.getmobileprocessor())
+    </script>
+</body>
+</html>

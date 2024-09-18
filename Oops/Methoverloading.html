@@ -25,6 +25,8 @@
             
         }
 
+        // there is no overloading in javascript.because javascript  is dynamically typed
+
         class Child extends Parent{
             name;
             //  constructor(){
@@ -38,10 +40,13 @@
             speak(a,b){
                 console.log(`we can pass the parameters ${a} and ${b}`)
             }
+            main(){
+                console.log("this is the child class Main method")
+            }
         }
 
        var oc=new Child()
-       oc.speak(23,54)
+       oc.speak()
        oc.main()
 
    </script> 

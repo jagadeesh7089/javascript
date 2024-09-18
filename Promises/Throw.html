@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // new Promise((resolve,reject)=>{
+            
+        //     throw new Error("Woophs!!")
+        // }).then(value=>console.log(value))
+        // .catch(error=>console.error(error))
+
+        new Promise((resolve,reject)=>{
+            resolve("ok")
+        }).then(result=>{
+            throw new Error("Whoops..!")
+          
+        }).catch(alert=>console.error(alert))
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let mypromises=new Promise(function(resolve,reject){
+        setTimeout(()=>{
+            resolve(1)
+        },2000)
+       })
+       mypromises.then(values=>{
+        return values *2
+       })
+       .then(values=>values*2)
+       .then(values=>console.log(values))
+    </script>
+</body>
+</html>

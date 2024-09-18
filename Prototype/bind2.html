@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Employee(x,y){
+            this.firstname=x 
+            this.lastname=y 
+           this.getfullname=function(){
+                return `my fullname is ${this.firstname+this.lastname}`
+            }
+        }
+           var obj=new Employee("jagadeesh","komirisetty")
+           let member={firstname:"prasad",lastname:"nalmilli"}
+
+           const details=Employee.getfullname.bind(member)
+        //    console.log(details())
+        
+     
+    </script>
+</body>
+</html>

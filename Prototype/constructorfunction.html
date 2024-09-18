@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function employee(x,y,z,g){
+            this.firstname=x
+            this.lastname=y
+            this.age=zc
+            this.gender=g  
+            // this.getfullname=function(){
+            //     return this.firstname+this.lastname
+            // } 
+             // we will write this function in inside the function the
+            // new keyword will create this function in every object
+            //.so we can waste the memory.that,s why we can use the prototype.
+           
+        }
+
+        employee.prototype.getfullname=function(){
+            return this.firstname+this.lastname
+        }
+        var obj=new employee("jagadeesh","komirisetty",23,"Male")
+        console.dir(obj)
+        console.log(obj.getfullname())
+       
+    </script>
+</body>
+</html>

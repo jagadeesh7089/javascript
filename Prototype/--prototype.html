@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* Prototype*/
+        // In function we declare the  properties and functions under prototype it will create the common memory to the objects
+
+        // function Employee(){
+
+        // }
+        // console.dir(Employee)
+        // const obj={}
+        // console.dir(obj)
+
+
+        function Employee(a,b,c){
+            this.firstname=a 
+            this.lastname=b 
+            this.gender=c 
+
+        }
+        // Employee.prototype.getfullname=function(){
+        //     return this.firstname+this.lastname
+        // }
+
+        Employee.prototype.company="Edupoly"
+
+         var obj=new Employee("jagadeesh","komirisetty",24)
+         console.dir(obj.company)
+         console.dir(obj)
+
+          var obj2=new Employee("jaga","komir",24)
+         console.log(obj2.company)
+
+
+         obj.__proto__.company="Deloitte"
+
+
+         console.log(obj.company)
+         console.log(obj2.company)
+
+         
+         console.dir(obj2)
+
+        //  obj2._proto_.getfullname=function(){
+        //     return this.gender
+        //  }
+        
+    </script>
+</body>
+</html>

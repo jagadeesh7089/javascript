@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1 id="root"></h1>
+    <script type="text/babel">
+        function Radio(){
+            const options=['cricket','footbal','hockey']
+            const day=['weekday','weekend']
+            const [game,setGame]=React.useState()
+            const [days,setDays]=React.useState()
+            return (
+                <>
+                
+                
+                 <div>
+                    {
+                        options.map((item,i)=>{
+                            return <>  <input type="radio" name="games" value={item} onChange={(e)=>{setGame(e.target.value)}}/>{item} <br></br></>
+                        })
+                    }
+                </div>
+                <h1>Select days</h1>
+                <div>
+                    {
+                        day.map((item)=>{
+                            return <>
+                                <input type="radio" name="day" value={item} onChange={(e)=>{setDays(e.target.value)}}/>{item}<br></br>
+                            </>
+                        })
+                    }
+                </div>
+                    <>
+                        <p>{game}</p>
+                        <p>{days}</p>
+                     </>
+
+                     <li>dfggtthyh</li>
+                </>
+            )
+        }
+        ReactDOM.render(<Radio/>,document.getElementById("root"))
+    </script>
+</body>
+</html>

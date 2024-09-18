@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* Apply method is similar to call method .but we can pass arguments as a array of arguments*/
+          function Employee(firstname,lastname){
+            console.log(`Employee full name is${firstname +lastname}, He is ${this.age}years old`)
+          }
+           let person={age:23}
+            Employee.apply(person ,["jagadeesh","komirisetty"])
+    </script>
+</body>
+</html>
